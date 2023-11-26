@@ -6,14 +6,10 @@ import Stock from "./Stock";
 import CategoryItem from "./CategoryItem";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { useAppDispatch } from "../../Type";
 const Sort: React.FC = () => {
   const [sortState, setSortState] = useState<boolean>(true);
   const [selectFilter, setSelectFilter] = useState<number>(0);
-  const dispatch = useAppDispatch();
-  const OnClickProduct = () => {
-    setSelectFilter(0);
-  };
+
   return (
     <aside className="xl:w-1/4 mb-5">
       <div
