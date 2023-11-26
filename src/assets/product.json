@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Adidas ORKETRO SHOES BLUE 36",
+    "imageUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/731de321c2a642f2bfb8af5700c33e9c_9366/Supernova_2.0_Running_Shoes_Blue_HQ7079_01_standard.jpg",
+    "price": 220,
+    "categstate": "Active",
+    "trading": "Retail",
+    "variants": "All stock",
+    "category": "Boots",
+    "gender": "Man shoes",
+    "desc": "Эти стильные и удобные кроссовки от Adidas идеально подходят для активных людей, ценящих комфорт и качество. Они изготовлены из прочных и дышащих материалов, обеспечивающих оптимальный микроклимат для ваших ног."
+  },
+  {
+    "id": 2,
+    "title": "Adidas NEO Dark Green 36",
+    "imageUrl": "https://static.cdek.shopping/images/shopping/0e8da123904844cab00a0d6ceaaef47a.jpg",
+    "price": 280,
+    "categstate": "Disable",
+    "trading": "Wholesale",
+    "variants": "Partial stock",
+    "category": "Boots",
+    "gender": "Man shoes",
+    "desc": "Классические линии и зеленый цвет делают эту модель идеальной для повседневной носки и занятий спортом. Шнуровка позволяет регулировать посадку кроссовок на ноге, а промежуточная подошва из материала EVA обеспечивает комфорт и амортизацию."
+  },
+  {
+    "id": 3,
+    "title": "Adidas SAMBA Salsa 39",
+    "imageUrl": "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/9aoAAOSwtYtkd5P8/$_57.JPG?set_id=8800005007",
+    "price": 250,
+    "categstate": "Draft",
+    "trading": "Wholesale",
+    "variants": "No stock",
+    "category": "Boots",
+    "gender": "Man shoes",
+    "desc": "Adidas Samba Salsa 39 - это отличный выбор для тех, кто ищет удобные кроссовки для повседневной носки или занятий спортом. Стильный дизайн, качественные материалы и продуманная конструкция делают их отличным выбором для активных людей."
+  },
+  {
+    "id": 4,
+    "title": "Adidas ULTRABOOST 1.0 DNA Running Speed 39",
+    "imageUrl": "https://myreact.ru/wp-content/uploads/2023/02/ultraboost_dna_shoes_white_gv8718_01_standard.jpg",
+    "price": 250,
+    "categstate": "Active",
+    "trading": "Retail",
+    "variants": "Partial stock",
+    "category": "Boots",
+    "gender": "Man shoes",
+    "desc": "Adidas Ultraboost 1.0 DNA Running Speed - это легкие и удобные кроссовки, предназначенные для бега и занятий спортом на открытом воздухе. Они изготовлены из высококачественных материалов и имеют стильный дизайн, который подойдет для любого образа."
+  }
+]
