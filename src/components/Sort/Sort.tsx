@@ -9,12 +9,18 @@ import { IoMdArrowDropdown } from "react-icons/io";
 const Sort: React.FC = () => {
   const [sortState, setSortState] = useState<boolean>(true);
   const [selectFilter, setSelectFilter] = useState<number>(0);
-
+  const filters = [
+    "Product Status",
+    "Product Type",
+    "Sort by",
+    "Stock Alert",
+    "Category",
+  ];
   return (
     <aside className="xl:w-1/4 mb-5">
       <div
         onClick={() => setSortState(!sortState)}
-        className=" rounded-xl p-2 mb-3 bg-gray-800 flex justify-center items-center"
+        className=" hover:cursor-pointer rounded-xl p-2 mb-2 bg-gray-800 flex justify-center items-center"
       >
         {sortState ? (
           <IoMdArrowDropup className=" text-xl text-white flex justify-center items-center" />
@@ -26,45 +32,28 @@ const Sort: React.FC = () => {
         <div className=" bg-gray-800 rounded-xl p-3  w-full">
           <div className=" text-gray-500">Sort By:</div>
           <div>
-            <div
-              onClick={() => setSelectFilter(0)}
-              className=" items-center hover:cursor-pointer my-2 text-gray-500 p-2 flex justify-center bg-gray-700 rounded-xl"
-            >
-              <div className=" mr-2">Product Status</div>
-              {selectFilter === 0 ? (
-                <IoMdArrowDropup className=" text-xl text-gray-500 flex justify-center items-center" />
-              ) : (
-                <IoMdArrowDropdown className=" text-xl text-gray-500 flex justify-center items-center" />
-              )}
+            <div className=" flex flex-wrap mb-2">
+              {filters.map((filt, index) => (
+                <div
+                  key={index}
+                  onClick={() => setSelectFilter(index)}
+                  className={` ${
+                    selectFilter === index ? " text-white" : "text-gray-500"
+                  } items-center hover:cursor-pointer m-1  p-2 flex justify-center bg-gray-700 rounded-xl`}
+                >
+                  <div className=" mr-1">{filt}</div>
+                  {selectFilter === index ? (
+                    <IoMdArrowDropup className=" text-xl  flex justify-center items-center" />
+                  ) : (
+                    <IoMdArrowDropdown className=" text-xl  flex justify-center items-center" />
+                  )}
+                </div>
+              ))}
             </div>
             {selectFilter === 0 && <CategoryAct />}
-            <div
-              onClick={() => setSelectFilter(1)}
-              className=" hover:cursor-pointer my-2 text-gray-500 p-2 flex justify-center bg-gray-700 rounded-xl"
-            >
-              Product Type
-            </div>
             {selectFilter === 1 && <SortType />}
-            <div
-              onClick={() => setSelectFilter(2)}
-              className=" hover:cursor-pointer my-2 text-gray-500 p-2 flex justify-center bg-gray-700 rounded-xl"
-            >
-              Sort by
-            </div>
             {selectFilter === 2 && <Alphabhet />}
-            <div
-              onClick={() => setSelectFilter(3)}
-              className=" hover:cursor-pointer my-2 text-gray-500 p-2 flex justify-center bg-gray-700 rounded-xl"
-            >
-              Stock Alert
-            </div>
             {selectFilter === 3 && <Stock />}
-            <div
-              onClick={() => setSelectFilter(4)}
-              className=" hover:cursor-pointer my-2 text-gray-500 p-2 flex justify-center bg-gray-700 rounded-xl"
-            >
-              Category
-            </div>
             {selectFilter === 4 && <CategoryItem />}
           </div>
         </div>

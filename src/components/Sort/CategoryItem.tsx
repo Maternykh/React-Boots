@@ -50,13 +50,13 @@ const CategoryItem: React.FC = () => {
         </div>
       </div>
       {popUp && (
-        <div className="bg-gray-700 justify-between rounded-xl w-1/2">
+        <div className="border-gray-700 border-2 justify-between rounded-xl w-1/2">
           {categoryItem.map((categ, index) => (
             <div
               className={` ${
                 selectCategory === categ
                   ? "  border-green-600"
-                  : "  border-transparent"
+                  : "  border-transparent cursor-pointer"
               } text-white border-2 flex justify-center rounded-xl p-1`}
               key={index}
               onClick={() => OnClickCategItem(categ)}

@@ -7,7 +7,7 @@ import { RootState } from "../../Redux/store";
 import { setSelectVariants } from "../../Redux/Slices/filterSlice";
 
 const Stock: React.FC = () => {
-  const stockArr = ["All stock", "Partial stock", "No stock"];
+  const stockArr = ["All", "All stock", "Partial stock", "No stock"];
   const selectVariants = useAppSelector(
     (state: RootState) => state.filter.selectVariants
   );
@@ -48,7 +48,7 @@ const Stock: React.FC = () => {
         </div>
       </div>
       {popUp && (
-        <div className=" border-gray-700 border-2 flex justify-between rounded-xl w-11/12">
+        <div className=" border-gray-700 border-2 rounded-xl w-1/2">
           {stockArr.map((stock, index) => (
             <div
               onClick={() => OnClickStock(stock)}
@@ -56,7 +56,7 @@ const Stock: React.FC = () => {
                 selectVariants === stock
                   ? "  border-green-600"
                   : "  border-transparent hover:cursor-pointer"
-              } text-white border-2 w-1/2 flex justify-center rounded-xl p-1`}
+              } text-white border-2 w-full flex justify-center rounded-xl p-1`}
               key={index}
             >
               {stock}

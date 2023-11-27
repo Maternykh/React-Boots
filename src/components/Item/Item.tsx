@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { productMap, useAppSelector } from "../../Type";
+import { productMap, useAppDispatch, useAppSelector } from "../../Type";
 import { FaBoxArchive } from "react-icons/fa6";
 import { IoIosMore } from "react-icons/io";
 import { RootState } from "../../Redux/store";
+import { setSelectFullphot } from "../../Redux/Slices/linkSlice";
 const Item: React.FC<productMap> = ({
   id,
   title,
@@ -18,6 +19,7 @@ const Item: React.FC<productMap> = ({
     (state: RootState) => state.linsk.selectItem
   );
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
   return (
     <>
       <div
@@ -26,8 +28,12 @@ const Item: React.FC<productMap> = ({
         } border-2 items-center xl:ml-2 xl:flex p-2 bg-slate-800 rounded-xl mb-2 justify-between w-full`}
       >
         <div className=" flex flex-wrap xl:flex-nowrap">
-          <div className=" w-full xl:w-20 mr-2">
-            <img src={imageUrl} className=" w-full rounded-xl" />
+          <div className=" w-full xl:w-20 xl:mr-2">
+            <img
+              src={imageUrl}
+              onClick={() => dispatch(setSelectFullphot(imageUrl))}
+              className=" w-full rounded-xl"
+            />
           </div>
           <div className=" p-2 mr-5 ">
             <div className=" text-white text-xl mb-2">{title}</div>

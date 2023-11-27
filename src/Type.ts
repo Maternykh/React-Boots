@@ -8,6 +8,8 @@ export interface Linsk {
   links: number;
   enterPrice: number;
   selectItem: number;
+  selectFullphot: string;
+  isOpenFhoto: boolean;
 }
 export interface filterType {
   selectCategstate: string;

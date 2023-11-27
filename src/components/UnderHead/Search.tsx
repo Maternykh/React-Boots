@@ -10,7 +10,7 @@ const Search: React.FC = () => {
         className=" xl:pr-32 pr-28 pl-10 w-full bg-slate-950 p-2 text-white rounded-xl border-none outline-none"
         placeholder="Search product..."
       />
-      <div className=" absolute text-white flex top-2 left-80 xl:left-96 border-l-2 pl-2 border-gray-400">
+      <div className=" absolute text-white flex top-2 left-64 xl:left-96 border-l-2 pl-2 border-gray-400">
         <TbLineScan className=" text text-green-500 text-2xl mr-2" />
         Scan
       </div>
