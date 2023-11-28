@@ -4,6 +4,7 @@ import { FaBoxArchive } from "react-icons/fa6";
 import { IoIosMore } from "react-icons/io";
 import { RootState } from "../../Redux/store";
 import { setSelectFullphot } from "../../Redux/Slices/linkSlice";
+
 const Item: React.FC<productMap> = ({
   id,
   title,
@@ -43,7 +44,7 @@ const Item: React.FC<productMap> = ({
                   {categstate}
                 </div>
               </div>
-              <div className=" text-gray-500 mr-2 ">{gender} shoes</div>
+              <div className=" text-gray-500 mr-2 ">{gender}</div>
               <div className=" xl:mt-0 mt-2 flex text-gray-500">
                 <div className=" flex justify-center items-center mr-1">
                   <FaBoxArchive className=" flex justify-center items-center" />

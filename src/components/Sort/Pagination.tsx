@@ -9,21 +9,24 @@ const Pagination: React.FC = () => {
   );
   const dispatch = useAppDispatch();
   return (
-    <div className=" flex justify-between mt-2">
-      {pages.map((page) => (
-        <div
-          onClick={() => dispatch(setCurrentPage(page))}
-          className={` ${
-            currentPage === page
-              ? " text-white"
-              : "text-gray-600 hover:cursor-pointer"
-          }  mr-2 flex justify-center p-2 bg-gray-800 w-16 rounded-xl`}
-          key={page}
-        >
-          {page}
-        </div>
-      ))}
-    </div>
+    <>
+      <div className=" mt-2 text-white">Select page:</div>
+      <div className=" flex justify-between mt-2">
+        {pages.map((page) => (
+          <div
+            onClick={() => dispatch(setCurrentPage(page))}
+            className={` ${
+              currentPage === page
+                ? " text-white border-green-500"
+                : "text-gray-600 hover:cursor-pointer border-gray-800"
+            }  mr-2 flex justify-center p-2  border-2 w-16 rounded-xl`}
+            key={page}
+          >
+            {page}
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 export default Pagination;

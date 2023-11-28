@@ -7,8 +7,23 @@ import Item from "../components/Item/Item";
 import { setSelectItem } from "../Redux/Slices/linkSlice";
 import { RootState } from "../Redux/store";
 import FullPhoto from "../components/Item/FullPhoto";
+import Loading from "../components/Item/Loading";
+import { motion } from "framer-motion";
 const Home: React.FC = () => {
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   const [items, setItems] = useState<productMap[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     selectCategory,
     selectCategstate,
@@ -35,12 +50,14 @@ const Home: React.FC = () => {
   const categorystateParam =
     selectCategstate !== "All" ? `categstate=${selectCategstate}` : "";
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(
-        `https://6561f2d6dcd355c083245fbd.mockapi.io/product?page=${currentPage}&limit=6&${categorystateParam}&${tradeParam}&${categoryParam}&${variantParam}&${Alphabet}`
+        `https://6561f2d6dcd355c083245fbd.mockapi.io/product?page=${currentPage}&limit=5&${categorystateParam}&${tradeParam}&${categoryParam}&${variantParam}&${Alphabet}`
       )
       .then((res) => {
         setItems(res.data);
+        setIsLoading(false);
       });
   }, [
     selectCategory,
@@ -67,7 +84,14 @@ const Home: React.FC = () => {
       <UnderHead />
       <div className=" xl:flex">
         <Sort />
-        <div className=" w-full xl:w-3/4">{itemsArr}</div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className=" w-full xl:w-3/4"
+        >
+          {isLoading ? <Loading /> : itemsArr}
+        </motion.div>
       </div>
       {isOpenFhoto && <FullPhoto />}
     </main>

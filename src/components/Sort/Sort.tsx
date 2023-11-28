@@ -7,6 +7,7 @@ import CategoryItem from "./CategoryItem";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Pagination from "./Pagination";
+import { motion } from "framer-motion";
 const Sort: React.FC = () => {
   const [sortState, setSortState] = useState<boolean>(true);
   const [selectFilter, setSelectFilter] = useState<number>(0);
@@ -30,7 +31,11 @@ const Sort: React.FC = () => {
         )}
       </div>
       {sortState && (
-        <div className=" bg-gray-800 rounded-xl p-3  w-full">
+        <motion.div
+          className=" bg-gray-800 rounded-xl p-3  w-full"
+          initial={{ y: -200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
           <div className=" text-gray-500">Sort By:</div>
           <div>
             <div className=" flex flex-wrap mb-2">
@@ -57,7 +62,7 @@ const Sort: React.FC = () => {
             {selectFilter === 3 && <Stock />}
             {selectFilter === 4 && <CategoryItem />}
           </div>
-        </div>
+        </motion.div>
       )}
       <Pagination />
     </aside>
