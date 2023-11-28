@@ -8,6 +8,8 @@ const initialState: filterType = {
   selectTrading: "All trade",
   selectVariants: "All",
   selectCategory: "All product",
+  searchValue: "",
+  currentPage: 1,
 };
 
 export const filterSlice = createSlice({
@@ -49,6 +51,12 @@ export const filterSlice = createSlice({
       state.selectVariants = "All";
       state.selectCategstate = "All";
     },
+    setSearchValue: (state, action: PayloadAction<string>) => {
+      state.searchValue = action.payload;
+    },
+    setCurrentPage: (state, action: PayloadAction<number>) => {
+      state.currentPage = action.payload;
+    },
   },
 });
 export const {
@@ -57,5 +65,7 @@ export const {
   setSelectTrading,
   setSelectVariants,
   setSelectCategory,
+  setSearchValue,
+  setCurrentPage,
 } = filterSlice.actions;
 export default filterSlice.reducer;

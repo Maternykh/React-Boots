@@ -2,7 +2,6 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "../../Type";
 import { RootState } from "../../Redux/store";
 import { setSelectCategstate } from "../../Redux/Slices/filterSlice";
-
 const CategoryAct: React.FC = () => {
   const sort: string[] = ["All", "Active", "Disable", "Draft"];
   const selectCategstate = useAppSelector(

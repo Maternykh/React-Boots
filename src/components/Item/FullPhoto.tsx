@@ -18,5 +18,4 @@ const FullPhoto: React.FC = () => {
     </div>
   );
 };
-
 export default FullPhoto;

@@ -8,7 +8,7 @@
     "trading": "Retail",
     "variants": "All stock",
     "category": "Boots",
-    "gender": "Man shoes",
+    "gender": "Man Shoes",
     "desc": "Эти стильные и удобные кроссовки от Adidas идеально подходят для активных людей, ценящих комфорт и качество. Они изготовлены из прочных и дышащих материалов, обеспечивающих оптимальный микроклимат для ваших ног."
   },
   {
@@ -20,7 +20,7 @@
     "trading": "Wholesale",
     "variants": "Partial stock",
     "category": "Boots",
-    "gender": "Man shoes",
+    "gender": "Man Shoes",
     "desc": "Классические линии и зеленый цвет делают эту модель идеальной для повседневной носки и занятий спортом. Шнуровка позволяет регулировать посадку кроссовок на ноге, а промежуточная подошва из материала EVA обеспечивает комфорт и амортизацию."
   },
   {
@@ -32,7 +32,7 @@
     "trading": "Wholesale",
     "variants": "No stock",
     "category": "Boots",
-    "gender": "Man shoes",
+    "gender": "Man Shoes",
     "desc": "Adidas Samba Salsa 39 - это отличный выбор для тех, кто ищет удобные кроссовки для повседневной носки или занятий спортом. Стильный дизайн, качественные материалы и продуманная конструкция делают их отличным выбором для активных людей."
   },
   {
@@ -44,7 +44,43 @@
     "trading": "Retail",
     "variants": "Partial stock",
     "category": "Boots",
-    "gender": "Man shoes",
+    "gender": "Man Shoes",
     "desc": "Adidas Ultraboost 1.0 DNA Running Speed - это легкие и удобные кроссовки, предназначенные для бега и занятий спортом на открытом воздухе. Они изготовлены из высококачественных материалов и имеют стильный дизайн, который подойдет для любого образа."
+  },
+  {
+    "id": 5,
+    "title": "Adidas ADICOLOR SST TRACK JACKET",
+    "imageUrl": "https://i.ebayimg.com/00/s/ODQwWDg0MA==/z/EWUAAOSw2EtiOSu0/$_57.JPG?set_id=8800005007",
+    "price": 300,
+    "categstate": "Disable",
+    "trading": "Retail",
+    "variants": "All stock",
+    "category": "Jacket",
+    "gender": "Man Clothes",
+    "desc": "Adidas ADICOLOR SST TRACK JACKET - это стильная и функциональная спортивная куртка, разработанная для обеспечения комфорта и защиты во время тренировок и активного отдыха на свежем воздухе. Она изготовлена из высококачественного материала с технологией ADICOLOR, которая обеспечивает долговечность и устойчивость к истиранию."
+  },
+  {
+    "id": 6,
+    "title": "Adidas LOGO FULL-ZIP HOODIE Red",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61VmrBxYDWL._AC_.jpg",
+    "price": 180,
+    "categstate": "Draft",
+    "trading": "Wholesale",
+    "variants": "No stock",
+    "category": "Hoodie",
+    "gender": "Women Clothes",
+    "desc": "Adidas LOGO Full-Zip Hoodie Red - это стильная и удобная толстовка с капюшоном, выполненная в ярко-красном цвете и украшенная логотипом Adidas. Эта модель идеально подходит для повседневной носки или спортивных активностей, обеспечивая комфорт и тепло в прохладную погоду."
+  },
+  {
+    "id": 7,
+    "title": "Adidas HEAT.RDY SPORT SHORTS",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0333/9653/products/adidas-men-heat-rdy-training-shorts-semi-flash-red-gl7307-749_2000x.jpg?v=1620458701",
+    "price": 220,
+    "categstate": "Active",
+    "trading": "Wholesale",
+    "variants": "Partial stock",
+    "category": "Shorts",
+    "gender": "Man Clothes",
+    "desc": "Adidas Heat.RDY Sport Shorts - это стильные и функциональные спортивные шорты, разработанные для обеспечения комфорта и производительности во время занятий спортом. Они изготовлены из высококачественного, легкого материала с применением технологии Adidas Heat.RDY, которая позволяет сохранять прохладу и сухость даже во время интенсивных тренировок."
   }
 ]

@@ -6,6 +6,7 @@ import Stock from "./Stock";
 import CategoryItem from "./CategoryItem";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
+import Pagination from "./Pagination";
 const Sort: React.FC = () => {
   const [sortState, setSortState] = useState<boolean>(true);
   const [selectFilter, setSelectFilter] = useState<number>(0);
@@ -58,6 +59,7 @@ const Sort: React.FC = () => {
           </div>
         </div>
       )}
+      <Pagination />
     </aside>
   );
 };

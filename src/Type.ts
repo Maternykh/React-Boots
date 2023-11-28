@@ -17,6 +17,8 @@ export interface filterType {
   selectTrading: string;
   selectVariants: string;
   selectCategory: string;
+  searchValue: string;
+  currentPage: number;
 }
 export interface productMap {
   id: number;

@@ -15,8 +15,8 @@ const Item: React.FC<productMap> = ({
   trading,
   desc,
 }) => {
-  const selectItem = useAppSelector(
-    (state: RootState) => state.linsk.selectItem
+  const { selectItem, enterPrice } = useAppSelector(
+    (state: RootState) => state.linsk
   );
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
   const dispatch = useAppDispatch();
@@ -81,5 +81,4 @@ const Item: React.FC<productMap> = ({
     </>
   );
 };
-
 export default Item;

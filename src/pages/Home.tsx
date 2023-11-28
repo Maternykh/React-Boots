@@ -7,24 +7,17 @@ import Item from "../components/Item/Item";
 import { setSelectItem } from "../Redux/Slices/linkSlice";
 import { RootState } from "../Redux/store";
 import FullPhoto from "../components/Item/FullPhoto";
-
 const Home: React.FC = () => {
   const [items, setItems] = useState<productMap[]>([]);
-  const selectCategory = useAppSelector(
-    (state: RootState) => state.filter.selectCategory
-  );
-  const selectCategstate = useAppSelector(
-    (state: RootState) => state.filter.selectCategstate
-  );
-  const selectTrading = useAppSelector(
-    (state: RootState) => state.filter.selectTrading
-  );
-  const selectVariants = useAppSelector(
-    (state: RootState) => state.filter.selectVariants
-  );
-  const selectAlphavite = useAppSelector(
-    (state: RootState) => state.filter.selectAlphavite
-  );
+  const {
+    selectCategory,
+    selectCategstate,
+    selectTrading,
+    selectVariants,
+    selectAlphavite,
+    searchValue,
+    currentPage,
+  } = useAppSelector((state: RootState) => state.filter);
   const isOpenFhoto = useAppSelector(
     (state: RootState) => state.linsk.isOpenFhoto
   );
@@ -33,7 +26,6 @@ const Home: React.FC = () => {
     selectAlphavite === "A-Z"
       ? `sortBy=title&order=asc`
       : `sortBy=title&order=desc`;
-
   const variantParam =
     selectVariants !== "All" ? `variants=${selectVariants}` : "";
   const tradeParam =
@@ -45,7 +37,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     axios
       .get(
-        `https://6561f2d6dcd355c083245fbd.mockapi.io/product?${categorystateParam}&${tradeParam}&${categoryParam}&${variantParam}&${Alphabet}`
+        `https://6561f2d6dcd355c083245fbd.mockapi.io/product?page=${currentPage}&limit=6&${categorystateParam}&${tradeParam}&${categoryParam}&${variantParam}&${Alphabet}`
       )
       .then((res) => {
         setItems(res.data);
@@ -56,12 +48,20 @@ const Home: React.FC = () => {
     selectTrading,
     selectVariants,
     selectAlphavite,
+    currentPage,
   ]);
-  const itemsArr = items.map((item) => (
-    <div key={item.id} onClick={() => dispatch(setSelectItem(item.id))}>
-      <Item {...item} />
-    </div>
-  ));
+  const itemsArr = items
+    .filter((item) => {
+      if (item.title.toLowerCase().includes(searchValue.toLowerCase())) {
+        return true;
+      }
+      return false;
+    })
+    .map((item) => (
+      <div key={item.id} onClick={() => dispatch(setSelectItem(item.id))}>
+        <Item {...item} />
+      </div>
+    ));
   return (
     <main>
       <UnderHead />

@@ -43,5 +43,4 @@ const Links: React.FC = () => {
     </nav>
   );
 };
-
 export default Links;
