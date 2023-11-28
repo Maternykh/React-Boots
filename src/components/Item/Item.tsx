@@ -15,8 +15,8 @@ const Item: React.FC<productMap> = ({
   trading,
   desc,
 }) => {
-  const { selectItem, enterPrice } = useAppSelector(
-    (state: RootState) => state.linsk
+  const selectItem = useAppSelector(
+    (state: RootState) => state.linsk.selectItem
   );
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
   const dispatch = useAppDispatch();
