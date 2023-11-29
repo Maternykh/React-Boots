@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppSelector } from "../Type";
 import { RootState } from "../Redux/store";
-import CartItem from "../components/Item/cartItem";
+import CartItem from "../components/Item/CartItem";
 import AddProduct from "../components/UnderHead/AddProduct";
 import FullPhoto from "../components/Item/FullPhoto";
 
