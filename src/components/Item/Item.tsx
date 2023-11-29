@@ -4,7 +4,7 @@ import { FaBoxArchive } from "react-icons/fa6";
 import { IoIosMore } from "react-icons/io";
 import { RootState } from "../../Redux/store";
 import { setSelectFullphot } from "../../Redux/Slices/linkSlice";
-
+import { motion } from "framer-motion";
 const Item: React.FC<productMap> = ({
   id,
   title,
@@ -16,20 +16,33 @@ const Item: React.FC<productMap> = ({
   trading,
   desc,
 }) => {
-  const selectItem = useAppSelector(
-    (state: RootState) => state.linsk.selectItem
+  const { selectItem, enterPrice } = useAppSelector(
+    (state: RootState) => state.linsk
   );
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   return (
     <>
-      <div
+      <motion.div
+        initial={{ y: -80, scale: 0 }}
+        animate={{ y: 0, scale: 1 }}
+        transition={{ duration: 0.1 }}
         className={` ${
           selectItem === id ? " border-green-600" : " border-transparent"
-        } border-2 items-center xl:ml-2 xl:flex p-2 bg-slate-800 rounded-xl mb-2 justify-between w-full`}
+        } ${
+          enterPrice === 1 ? "xl:flex w-full" : ""
+        } border-2 items-center xl:ml-2  p-2 bg-slate-800 rounded-xl mb-2 justify-between `}
       >
-        <div className=" flex flex-wrap xl:flex-nowrap">
-          <div className=" w-full xl:w-20 xl:mr-2">
+        <div
+          className={`${
+            enterPrice === 1 ? "flex" : " block"
+          }  flex-wrap xl:flex-nowrap`}
+        >
+          <div
+            className={`${
+              enterPrice === 1 ? "w-full xl:w-20" : "w-full"
+            }  xl:mr-2`}
+          >
             <img
               src={imageUrl}
               onClick={() => dispatch(setSelectFullphot(imageUrl))}
@@ -57,7 +70,13 @@ const Item: React.FC<productMap> = ({
             </div>
           </div>
         </div>
-        <div className=" flex items-center xl:justify-normal justify-between">
+        <div
+          className={` ${
+            enterPrice === 1
+              ? "xl:justify-normal justify-between"
+              : " xl:justify-between"
+          } flex items-center `}
+        >
           <div className=" xl:border-l-2 border-gray-500 px-2 xl:px-10 text-gray-500 w-80">
             <div className=" xl:mb-2">{trading} price</div>
             <div className=" text-white">${price}</div>
@@ -71,7 +90,7 @@ const Item: React.FC<productMap> = ({
             <IoIosMore className=" flex justify-center items-center text-2xl" />
           </div>
         </div>
-      </div>
+      </motion.div>
       {isOpenDesc && (
         <div className=" px-2 w-full mb-5">
           <div className="  rounded-xl p-2 bg-gray-800  text-gray-500">

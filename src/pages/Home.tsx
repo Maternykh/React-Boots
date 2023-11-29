@@ -8,20 +8,7 @@ import { setSelectItem } from "../Redux/Slices/linkSlice";
 import { RootState } from "../Redux/store";
 import FullPhoto from "../components/Item/FullPhoto";
 import Loading from "../components/Item/Loading";
-import { motion } from "framer-motion";
 const Home: React.FC = () => {
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const [items, setItems] = useState<productMap[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -33,8 +20,8 @@ const Home: React.FC = () => {
     searchValue,
     currentPage,
   } = useAppSelector((state: RootState) => state.filter);
-  const isOpenFhoto = useAppSelector(
-    (state: RootState) => state.linsk.isOpenFhoto
+  const { isOpenFhoto, enterPrice } = useAppSelector(
+    (state: RootState) => state.linsk
   );
   const dispatch = useAppDispatch();
   const Alphabet =
@@ -75,7 +62,11 @@ const Home: React.FC = () => {
       return false;
     })
     .map((item) => (
-      <div key={item.id} onClick={() => dispatch(setSelectItem(item.id))}>
+      <div
+        className={` ${enterPrice === 1 ? "" : " w-1/2"}`}
+        key={item.id}
+        onClick={() => dispatch(setSelectItem(item.id))}
+      >
         <Item {...item} />
       </div>
     ));
@@ -84,14 +75,13 @@ const Home: React.FC = () => {
       <UnderHead />
       <div className=" xl:flex">
         <Sort />
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          className=" w-full xl:w-3/4"
+        <div
+          className={` ${
+            enterPrice === 1 ? "" : " flex flex-wrap justify-center"
+          } w-full xl:w-3/4`}
         >
           {isLoading ? <Loading /> : itemsArr}
-        </motion.div>
+        </div>
       </div>
       {isOpenFhoto && <FullPhoto />}
     </main>

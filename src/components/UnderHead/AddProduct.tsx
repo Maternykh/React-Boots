@@ -9,7 +9,7 @@ const AddProduct: React.FC = () => {
   const dispatch = useAppDispatch();
   return (
     <div className=" flex flex-nowrap xl:justify-normal justify-between">
-      <div className=" bg-gray-700 rounded-xl flex mr-3">
+      <div className=" hidden bg-gray-700 rounded-xl xl:flex mr-3">
         <div
           onClick={() => dispatch(setEnterPrice(1))}
           className={` ${

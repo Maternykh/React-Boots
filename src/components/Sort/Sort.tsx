@@ -33,8 +33,9 @@ const Sort: React.FC = () => {
       {sortState && (
         <motion.div
           className=" bg-gray-800 rounded-xl p-3  w-full"
-          initial={{ y: -200, opacity: 0 }}
+          initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <div className=" text-gray-500">Sort By:</div>
           <div>
