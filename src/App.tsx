@@ -6,7 +6,7 @@ import Order from "./pages/Order";
 import Document from "./pages/Document";
 import Header from "./components/Header/Header";
 import NotFound from "./pages/NotFound";
-import AddProduct from "./pages/AddProduct";
+import AddProductPage from "./pages/AddProductPage";
 const App: React.FC = () => {
   return (
     <div className=" bg-gray-900 min-h-screen p-4">
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <Route path="/order" element={<Order />}></Route>
         <Route path="/document" element={<Document />}></Route>
         <Route path="*" element={<NotFound />}></Route>
-        <Route path="/addproduct" element={<AddProduct />}></Route>
+        <Route path="/addproduct" element={<AddProductPage />}></Route>
       </Routes>
     </div>
   );

@@ -4,8 +4,8 @@ import { FaBoxArchive } from "react-icons/fa6";
 import { IoIosMore } from "react-icons/io";
 import { RootState } from "../../Redux/store";
 import { setSelectFullphot } from "../../Redux/Slices/linkSlice";
-import { setCartItems } from "../../Redux/Slices/cartSlice";
-const Item: React.FC<productMap> = ({
+import { removeCartItems } from "../../Redux/Slices/cartSlice";
+const CartItem: React.FC<productMap> = ({
   id,
   title,
   imageUrl,
@@ -15,21 +15,18 @@ const Item: React.FC<productMap> = ({
   gender,
   trading,
   desc,
-  category,
 }) => {
-  const { selectItem, enterPrice } = useAppSelector(
-    (state: RootState) => state.linsk
+  const enterPrice = useAppSelector(
+    (state: RootState) => state.linsk.enterPrice
   );
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   return (
     <>
       <div
-        className={` ${
-          selectItem === id ? " border-green-600" : " border-transparent"
-        } ${
+        className={`${
           enterPrice === 1 ? "xl:flex w-full" : ""
-        } border-2 items-center xl:ml-2  p-2 bg-slate-800 rounded-xl mb-2 justify-between `}
+        } border-transparent border-2 items-center xl:ml-2  p-2 bg-slate-800 rounded-xl mb-2 justify-between `}
       >
         <div
           className={`${
@@ -65,29 +62,14 @@ const Item: React.FC<productMap> = ({
                   <div className=" text-white">{variants}</div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className=" flex items-end mb-2 ml-2">
-            <div
-              onClick={() =>
-                dispatch(
-                  setCartItems({
-                    id,
-                    title,
-                    imageUrl,
-                    price,
-                    categstate,
-                    trading,
-                    variants,
-                    category,
-                    desc,
-                    gender,
-                  })
-                )
-              }
-              className="  justify-center flex hover:cursor-pointer bg-green-500 w-28 h-min rounded-lg p-1"
-            >
-              add to cart
+              <div className=" mr-2">
+                <div
+                  onClick={() => dispatch(removeCartItems(id))}
+                  className=" hover:cursor-pointer bg-green-500 w-min inline rounded-lg p-1"
+                >
+                  remove to cart
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -122,4 +104,4 @@ const Item: React.FC<productMap> = ({
     </>
   );
 };
-export default Item;
+export default CartItem;

@@ -33,7 +33,7 @@ export interface productMap {
   gender: string;
 }
 export interface itemsproductMap {
-  items: productMap[];
+  cartItems: productMap[];
 }
 type DispatchFunc = () => AppDispatch;
 export const useAppDispatch: DispatchFunc = useDispatch;
