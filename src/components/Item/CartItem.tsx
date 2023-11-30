@@ -62,14 +62,14 @@ const CartItem: React.FC<productMap> = ({
                   <div className=" text-white">{variants}</div>
                 </div>
               </div>
-              <div className=" mr-2 xl:mt-0 mt-2">
-                <div
-                  onClick={() => dispatch(removeCartItems(id))}
-                  className="  hover:cursor-pointer bg-green-500 w-min inline rounded-lg p-1"
-                >
-                  remove to cart
-                </div>
-              </div>
+            </div>
+          </div>
+          <div className=" flex items-end mb-2 ml-2 ">
+            <div
+              onClick={() => dispatch(removeCartItems(id))}
+              className=" hover:bg-green-500 hover:text-black text-white border-2  justify-center flex hover:cursor-pointer border-green-500  w-32 h-min rounded-lg p-1"
+            >
+              Remove to Cart
             </div>
           </div>
         </div>

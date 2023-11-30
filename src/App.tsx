@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Order from "./pages/Order";
-import Document from "./pages/Document";
+import Report from "./pages/Report";
 import Header from "./components/Header/Header";
 import NotFound from "./pages/NotFound";
 import AddProductPage from "./pages/AddProductPage";
@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/order" element={<Order />}></Route>
-        <Route path="/document" element={<Document />}></Route>
+        <Route path="/reviews" element={<Report />}></Route>
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/addproduct" element={<AddProductPage />}></Route>
       </Routes>

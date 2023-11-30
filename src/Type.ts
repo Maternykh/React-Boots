@@ -35,6 +35,31 @@ export interface productMap {
 export interface itemsproductMap {
   cartItems: productMap[];
 }
+export interface peopleMap {
+  id: number;
+  image: string;
+  name: string;
+  email: string;
+  date: string;
+  type: string;
+  status: string;
+  desc: string;
+}
+export interface appersType {
+  quantity: string;
+  percent: number;
+  name: string;
+}
+export interface reportType {
+  id: number;
+  pushedname: string;
+  value: string;
+  estimation: string;
+}
+
+export interface initialOnlyReports {
+  reports: reportType[];
+}
 type DispatchFunc = () => AppDispatch;
 export const useAppDispatch: DispatchFunc = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

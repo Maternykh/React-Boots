@@ -21,6 +21,7 @@ const Item: React.FC<productMap> = ({
     (state: RootState) => state.linsk
   );
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
+
   const dispatch = useAppDispatch();
   return (
     <>
@@ -85,9 +86,9 @@ const Item: React.FC<productMap> = ({
                   })
                 )
               }
-              className="  justify-center flex hover:cursor-pointer bg-green-500 w-28 h-min rounded-lg p-1"
+              className=" hover:bg-green-500 hover:text-black text-white border-2  justify-center flex hover:cursor-pointer border-green-500 w-28 h-min rounded-lg p-1"
             >
-              add to cart
+              Add to Cart
             </div>
           </div>
         </div>
@@ -105,8 +106,10 @@ const Item: React.FC<productMap> = ({
           <div
             onClick={() => setIsOpenDesc(!isOpenDesc)}
             className={`${
-              isOpenDesc ? " border-green-600 " : "border-gray-500 "
-            } text-gray-500 hover:cursor-pointer h-min flex justify-center items-center p-2 rounded-xl border-2 `}
+              isOpenDesc
+                ? " border-green-600 text-white"
+                : "border-gray-500 text-gray-500"
+            }  hover:cursor-pointer h-min flex justify-center items-center p-2 rounded-xl border-2 `}
           >
             <IoIosMore className=" flex justify-center items-center text-2xl" />
           </div>

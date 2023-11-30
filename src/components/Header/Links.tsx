@@ -18,8 +18,8 @@ const Links: React.FC = () => {
       pathLink: `/order`,
     },
     {
-      nameLink: "Document",
-      pathLink: `/document`,
+      nameLink: "Reviews",
+      pathLink: `/reviews`,
     },
   ];
   const links = useAppSelector((state: RootState) => state.linsk.links);
