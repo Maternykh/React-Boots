@@ -17,7 +17,7 @@ const Report: React.FC = () => {
       </div>
       <div className=" xl:justify-normal xl:flex-nowrap flex flex-wrap justify-center">
         {isForm && <Form />}
-        <div className=" justify-between xl:justify-normal xl:ml-2 flex flex-wrap h-min">
+        <div className=" w-full justify-between xl:justify-normal xl:ml-2 flex flex-wrap h-min">
           {reports.map((rep, index) => (
             <Reports key={index} {...rep} />
           ))}

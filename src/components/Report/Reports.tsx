@@ -10,7 +10,7 @@ const Reports: React.FC<reportType> = ({
 }) => {
   const dispatch = useAppDispatch();
   return (
-    <div className=" p-5 w-52 xl:w-80 bg-gray-950 rounded-xl mr-2 mb-2">
+    <div className=" p-5 w-full xl:w-80 bg-gray-950 rounded-xl xl:mr-2 mb-2">
       <div className=" flex justify-between mb-4 border-b-2 border-gray-500 pb-4 ">
         <div>{pushedname}</div>
         <div>{estimation}/10</div>

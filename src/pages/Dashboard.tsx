@@ -95,13 +95,13 @@ const Dashboard: React.FC = () => {
     },
   ];
   return (
-    <div className=" p-5 text-white">
-      <div className=" flex flex-wrap justify-between mb-5">
+    <div className=" xl:p-5 text-white">
+      <div className="  flex flex-wrap justify-between  xl:mb-5">
         {apper.map((app, index) => (
           <DashCustom key={index} {...app} />
         ))}
       </div>
-      <div className=" flex flex-wrap justify-between">
+      <div className=" justify-center flex flex-wrap xl:justify-between">
         {staff.map((pepl, index) => (
           <PeopleCart key={index} {...pepl} />
         ))}

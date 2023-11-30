@@ -24,9 +24,8 @@ const Form: React.FC = () => {
       dispatch(setReports({ pushedname, value, estimation, id }));
     }
   };
-
   return (
-    <div className=" mb-5  bg-gray-800 rounded-xl w-min p-4 h-min">
+    <div className=" mb-5  bg-gray-800 rounded-xl xl:w-min p-4 xl:h-min w-full">
       <div className=" mb-2">Your name:</div>
       <div>
         <input
@@ -34,7 +33,7 @@ const Form: React.FC = () => {
           onChange={(e) => dispatch(setName(e.target.value))}
           placeholder="Enter your name"
           type="text"
-          className=" bg-gray-700 p-2 rounded-xl outline-none border-none w-80 mb-2"
+          className=" bg-gray-700 p-2 rounded-xl outline-none border-none w-full xl:w-80 mb-2"
         />
       </div>
       <div className=" mb-2">Report:</div>
@@ -42,7 +41,7 @@ const Form: React.FC = () => {
         <textarea
           value={value}
           onChange={(e) => dispatch(setReportValue(e.target.value))}
-          className=" h-40 bg-gray-700 p-2 rounded-xl outline-none border-none w-80"
+          className=" h-40 bg-gray-700 p-2 rounded-xl outline-none border-none w-full xl:w-80"
           placeholder="Enter your report"
           name="report"
         ></textarea>
