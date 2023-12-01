@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../Type";
 import {
+  resetReport,
   setEstimationValue,
   setName,
   setReportValue,
@@ -22,6 +23,7 @@ const Form: React.FC = () => {
     if (!!pushedname && !!value && !!estimation) {
       const id = Math.random() * 999999999;
       dispatch(setReports({ pushedname, value, estimation, id }));
+      dispatch(resetReport());
     }
   };
   return (

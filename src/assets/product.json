@@ -82,5 +82,41 @@
     "category": "Shorts",
     "gender": "Man Clothes",
     "desc": "Adidas Heat.RDY Sport Shorts - это стильные и функциональные спортивные шорты, разработанные для обеспечения комфорта и производительности во время занятий спортом. Они изготовлены из высококачественного, легкого материала с применением технологии Adidas Heat.RDY, которая позволяет сохранять прохладу и сухость даже во время интенсивных тренировок."
+  },
+  {
+    "id": 8,
+    "title": "Adidas HELIONIC JACKET",
+    "imageUrl": "https://www.sport-kupi.ru/netcat_files/16/19/puhovik_adidas_helionic_bq2001.jpg",
+    "price": 330,
+    "categstate": "Disable",
+    "trading": "Retail",
+    "variants": "All stock",
+    "category": "Jacket",
+    "gender": "Man Clothes",
+    "desc": "Adidas Helionic Jacket - это функциональная и стильная куртка, которая обеспечивает комфорт и защиту от непогоды. Эта модель идеально подходит для активных людей, которые ценят удобство и современный дизайн."
+  },
+  {
+    "id": 9,
+    "title": "Adidas ADICOLOR ORIGINALS",
+    "imageUrl": "https://assets.adidas.com/images/w_1080,h_1080,f_auto,q_auto:sensitive,fl_lossy/101576ae9e3346289abcabf700dfef2c_9366/GE5213_02_laydown.jpg",
+    "price": 220,
+    "categstate": "Draft",
+    "trading": "Retail",
+    "variants": "No stock",
+    "category": "Jacket",
+    "gender": "Man Clothes",
+    "desc": "Adidas Adicolor Originals - это стильная и яркая коллекция одежды и обуви, которая является классическим представителем уличной моды и спортивного стиля. Линейка Adicolor Originals была создана в 1989 году и с тех пор стала одной из самых популярных и узнаваемых в мире Adidas."
+  },
+  {
+    "id": 10,
+    "title": "Adidas SHORT SPORTS",
+    "imageUrl": "http://gd3.alicdn.com/bao/uploaded/i3/392193281/TB2Y6JLogJlpuFjSspjXXcT.pXa_!!392193281.jpg",
+    "price": 300,
+    "categstate": "Active",
+    "trading": "Wholesale",
+    "variants": "No stock",
+    "category": "Shorts",
+    "gender": "Man Clothes",
+    "desc": "Adidas SHORT SPORTS"
   }
 ]

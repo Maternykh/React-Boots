@@ -20,8 +20,14 @@ export const reportSlice = createSlice({
     setEstimationValue: (state, action: PayloadAction<string>) => {
       state.estimation = action.payload;
     },
+    resetReport: (state) => {
+      state.id = 0;
+      state.pushedname = "";
+      state.value = "";
+      state.estimation = "";
+    },
   },
 });
-export const { setName, setReportValue, setEstimationValue } =
+export const { setName, setReportValue, setEstimationValue, resetReport } =
   reportSlice.actions;
 export default reportSlice.reducer;

@@ -23,14 +23,14 @@ const Order: React.FC = () => {
           Clear the trash
         </div>
       </div>
-      {cartItems.length !== 0 && (
+      {/* {cartItems.length !== 0 && (
         <div className="  flex justify-center mt-2 p-2 w-52 rounded-xl bg-gray-800">
           <div className=" text-white flex">
             Product in trash:
             <div className=" ml-2 text-green-500">{cartItems.length}</div>
           </div>
         </div>
-      )}
+      )} */}
       {cartItems.length === 0 && (
         <div className=" flex justify-center items-center h-96">
           <div className=" text-white text-3xl">

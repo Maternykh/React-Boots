@@ -4,7 +4,11 @@ import { FaBoxArchive } from "react-icons/fa6";
 import { IoIosMore } from "react-icons/io";
 import { RootState } from "../../Redux/store";
 import { setSelectFullphot } from "../../Redux/Slices/linkSlice";
-import { removeCartItems } from "../../Redux/Slices/cartSlice";
+import {
+  minusItem,
+  plusItem,
+  removeCartItems,
+} from "../../Redux/Slices/cartSlice";
 const CartItem: React.FC<productMap> = ({
   id,
   title,
@@ -15,12 +19,14 @@ const CartItem: React.FC<productMap> = ({
   gender,
   trading,
   desc,
+  count,
 }) => {
   const enterPrice = useAppSelector(
     (state: RootState) => state.linsk.enterPrice
   );
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
   const dispatch = useAppDispatch();
+
   return (
     <>
       <div
@@ -64,14 +70,6 @@ const CartItem: React.FC<productMap> = ({
               </div>
             </div>
           </div>
-          <div className=" flex items-end mb-2 ml-2 ">
-            <div
-              onClick={() => dispatch(removeCartItems(id))}
-              className=" hover:bg-green-500 hover:text-black text-white border-2  justify-center flex hover:cursor-pointer border-green-500  w-32 h-min rounded-lg p-1"
-            >
-              Remove to Cart
-            </div>
-          </div>
         </div>
         <div
           className={` ${
@@ -80,6 +78,31 @@ const CartItem: React.FC<productMap> = ({
               : " xl:justify-between"
           } flex items-center `}
         >
+          <div className=" flex items-end  mr-2 ">
+            <div
+              onClick={() => dispatch(removeCartItems(id))}
+              className=" hover:bg-green-500 hover:text-black text-white border-2  justify-center flex hover:cursor-pointer border-green-500  w-32 h-min rounded-lg p-1"
+            >
+              Remove to Cart
+            </div>
+          </div>
+          <div className="flex items-end  mx-2 text-white">
+            <div className=" h-min flex  border-2 border-green-500  py-1 rounded-xl">
+              <div
+                onClick={() => dispatch(plusItem(id))}
+                className=" hover:cursor-pointer px-3 border-r-2 border-green-500"
+              >
+                +
+              </div>
+              <div className=" mx-3">{count}</div>
+              <div
+                onClick={() => dispatch(minusItem(id))}
+                className=" hover:cursor-pointer px-3 border-l-2 border-green-500"
+              >
+                -
+              </div>
+            </div>
+          </div>
           <div className=" xl:border-l-2 border-gray-500 px-2 xl:px-10 text-gray-500 w-80">
             <div className=" xl:mb-2">{trading} price</div>
             <div className=" text-white">${price}</div>

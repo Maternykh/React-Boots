@@ -31,9 +31,12 @@ export interface productMap {
   category: string;
   desc: string;
   gender: string;
+  count: number;
 }
+
 export interface itemsproductMap {
   cartItems: productMap[];
+  totalcartlenght: number;
 }
 export interface peopleMap {
   id: number;

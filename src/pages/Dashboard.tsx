@@ -101,7 +101,7 @@ const Dashboard: React.FC = () => {
           <DashCustom key={index} {...app} />
         ))}
       </div>
-      <div className=" justify-center flex flex-wrap xl:justify-between">
+      <div className=" justify-center flex flex-wrap ">
         {staff.map((pepl, index) => (
           <PeopleCart key={index} {...pepl} />
         ))}

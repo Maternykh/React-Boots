@@ -13,7 +13,7 @@ const PeopleCart: React.FC<peopleMap> = ({
 }) => {
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
   return (
-    <div className="  p-5 bg-gray-950 rounded-xl mb-5 mr-2 xl:w-96 w-full">
+    <div className="  p-5 bg-gray-800 rounded-xl mb-5 xl:mr-5 mr-2 xl:w-96 w-full">
       <div className=" flex items-center mb-3">
         <div className=" w-20 mr-3">
           <img src={image} alt="" className=" w-full rounded-full" />

@@ -16,13 +16,47 @@ const Item: React.FC<productMap> = ({
   trading,
   desc,
   category,
+  count,
 }) => {
   const { selectItem, enterPrice } = useAppSelector(
     (state: RootState) => state.linsk
   );
+  const item = useAppSelector((state: RootState) =>
+    state.cart.cartItems.find((obj) => obj.id === id)
+  );
+  const AddedCount = !!item ? item.count : 0;
   const [isOpenDesc, setIsOpenDesc] = useState<boolean>(false);
-
+  const OnClickAddCart = (
+    id: number,
+    title: string,
+    imageUrl: string,
+    price: number,
+    categstate: string,
+    trading: string,
+    variants: string,
+    category: string,
+    desc: string,
+    gender: string,
+    count: number
+  ) => {
+    dispatch(
+      setCartItems({
+        id,
+        title,
+        imageUrl,
+        price,
+        categstate,
+        trading,
+        variants,
+        category,
+        desc,
+        gender,
+        count,
+      })
+    );
+  };
   const dispatch = useAppDispatch();
+
   return (
     <>
       <div
@@ -68,29 +102,6 @@ const Item: React.FC<productMap> = ({
               </div>
             </div>
           </div>
-          <div className=" flex items-end mb-2 ml-2">
-            <div
-              onClick={() =>
-                dispatch(
-                  setCartItems({
-                    id,
-                    title,
-                    imageUrl,
-                    price,
-                    categstate,
-                    trading,
-                    variants,
-                    category,
-                    desc,
-                    gender,
-                  })
-                )
-              }
-              className=" hover:bg-green-500 hover:text-black text-white border-2  justify-center flex hover:cursor-pointer border-green-500 w-28 h-min rounded-lg p-1"
-            >
-              Add to Cart
-            </div>
-          </div>
         </div>
         <div
           className={` ${
@@ -103,6 +114,29 @@ const Item: React.FC<productMap> = ({
             <div className=" xl:mb-2">{trading} price</div>
             <div className=" text-white">${price}</div>
           </div>
+          <div className=" mt-2 flex items-end mb-2 mx-2">
+            <div
+              onClick={() =>
+                OnClickAddCart(
+                  id,
+                  title,
+                  imageUrl,
+                  price,
+                  categstate,
+                  trading,
+                  variants,
+                  category,
+                  desc,
+                  gender,
+                  count
+                )
+              }
+              className="  hover:bg-green-500 hover:text-black text-white border-2  justify-center flex hover:cursor-pointer border-green-500 w-32 h-min rounded-lg p-1"
+            >
+              Add to Cart {AddedCount > 0 && AddedCount}
+            </div>
+          </div>
+
           <div
             onClick={() => setIsOpenDesc(!isOpenDesc)}
             className={`${
